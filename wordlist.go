@@ -290,3 +290,12 @@ func GetRandomName(length int, separator string) string {
 	}
 	return name
 }
+
+// GetRandomWords returns a slice of strings made up of the number of words requested
+func GetRandomWords(length int) []string {
+	var words []string
+	for i := 0; i < length-1; i++ {
+		words = append(words, wordlist[rand.Intn(len(wordlist))])
+	}
+	return words
+}
