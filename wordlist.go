@@ -4,7 +4,7 @@ import (
 	"math/rand"
 )
 
-var wordlist = [...]string{"acrobat", "africa", "alaska", "albert", "albino", "album",
+var wordlist = []string{"acrobat", "africa", "alaska", "albert", "albino", "album",
 	"alcohol", "alex", "alpha", "amadeus", "amanda", "amazon",
 	"america", "analog", "animal", "antenna", "antonio", "apollo",
 	"april", "aroma", "artist", "aspirin", "athlete", "atlas",
@@ -294,7 +294,7 @@ func GetRandomName(length int, separator string) string {
 // GetRandomWords returns a slice of strings made up of the number of words requested
 func GetRandomWords(length int) []string {
 	var words []string
-	for i := 0; i < length-1; i++ {
+	for i := 0; i < length; i++ {
 		words = append(words, wordlist[rand.Intn(len(wordlist))])
 	}
 	return words
